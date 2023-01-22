@@ -77,9 +77,10 @@ function remove_app(){
     # permissions_update
 
     #para remover o app criado 
-    sudo rm -rf drone 
-    sudo rm -rf gitea 
+    sudo rm -rf docker-compose/drone 
+    sudo rm -rf docker-compose/gitea 
     sudo rm -rf volumes 
+    sudo rm -rf docker-compose/drone_ssh_key
     sudo rm -rf docker-compose/postgres
 }
 
