@@ -25,7 +25,23 @@ services:
       - cicd_net
     volumes:
       - ./docker-compose/gitea:/data
-
+  
+  postgres:
+      container_name: postgres
+      image: postgres:13-alpine
+      command: ["postgres", "-c", "fsync=false", "-c", "full_page_writes=off"]
+      environment:
+        - POSTGRES_USER=gitea
+        - POSTGRES_PASSWORD=gitea
+        - POSTGRES_DB=gitea
+      networks:
+        - cicd_net
+      volumes:
+        - ./docker-compose/postgres:/var/lib/postgresql/data
+        - ./docker-compose/db_restore:/home/db_restore
+      ports:
+        - "5433:5432"
+  
   drone:
     container_name: drone
     image: drone/drone:${DRONE_VERSION:-1.6.4}
@@ -78,6 +94,11 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
+  dokku:
+    container_name: dokku
+    image: dokku/dokku:0.29.4
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 networks:
   cicd_net:
     name: cicd_net
