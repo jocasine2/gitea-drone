@@ -22,7 +22,7 @@ services:
       - "3000:3000"
       - "222:22"
     networks:
-      - cicd_net
+      - gitea
     volumes:
       - ./docker-compose/gitea:/data
   
@@ -35,7 +35,7 @@ services:
         - POSTGRES_PASSWORD=gitea
         - POSTGRES_DB=gitea
       networks:
-        - cicd_net
+        - gitea
       volumes:
         - ./docker-compose/postgres:/var/lib/postgresql/data
         - ./docker-compose/db_restore:/home/db_restore
@@ -102,3 +102,5 @@ services:
 networks:
   cicd_net:
     name: cicd_net
+  gitea:
+    external: false

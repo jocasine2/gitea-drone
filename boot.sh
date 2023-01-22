@@ -10,8 +10,8 @@ export MINIO_SECRET_KEY="EXAMPLESECRET"
 export GITEA_ADMIN_USER="example"
 export DRONE_RPC_SECRET="$(echo ${HOSTNAME} | openssl dgst -md5 -hex)"
 export DRONE_USER_CREATE="username:${GITEA_ADMIN_USER},machine:false,admin:true,token:${DRONE_RPC_SECRET}"
-export DRONE_GITEA_CLIENT_ID="bdcce63b-48bd-4f6a-aeec-4db1e6d68f09"
-export DRONE_GITEA_CLIENT_SECRET="SEvzQKBPF1Y6EmY_KYdZFEcqwK9v-oNnhzC51i09NPY="
+export DRONE_GITEA_CLIENT_ID="f3cc9eb8-9527-44a8-b0f5-b39cc8ed3527"
+export DRONE_GITEA_CLIENT_SECRET="3jJLabiDNtRZwFn4Sslm7A0D4j3nXc0oRyTc48A7nqg="
 docker-compose up -d --build
 
 echo ""
