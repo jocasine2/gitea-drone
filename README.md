@@ -1,6 +1,6 @@
-<p align="center"><a href="https://rubyonrails.org/" target]="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Ruby_On_Rails_Logo.svg/1200px-Ruby_On_Rails_Logo.svg.png" width="400"></a></p>
+<p align="center"><a href="https://rubyonrails.org/" target]="_blank"><img src="https://user-images.githubusercontent.com/38539884/217832257-47165ea3-9196-4586-8f53-12470cb4c2ed.png" width="400"></a></p>
 
-<h1 align="center">Yay! You’re on Rails!</h1>
+<h1 align="center">Gitea + Drone CI no Docker!</h1>
 
 # Iniciando ambiente de desenvolvimento
 1 - Se estiver em ambiente Windows instale o Ubuntu como subsistema através do [WSL2](https://www.youtube.com/watch?v=_Wp2nWtTBBY).
