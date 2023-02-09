@@ -1,4 +1,4 @@
-docker-compose/postgres
-docker-compose/gitea
+docker-compose/postgres_data
+docker-compose/gitea_data
 docker-compose/drone_ssh_key
-docker-compose/drone
+docker-compose/drone_data

@@ -73,15 +73,13 @@ function bd(){
     docker-compose run postgres $@
 }
 
-function remove_app(){
+function cache_clear(){
     # permissions_update
 
     #para remover o app criado 
-    sudo rm -rf docker-compose/drone 
-    sudo rm -rf docker-compose/gitea 
-    sudo rm -rf volumes 
-    sudo rm -rf docker-compose/drone_ssh_key
-    sudo rm -rf docker-compose/postgres
+    sudo rm -rf docker-compose/drone_data
+    sudo rm -rf docker-compose/gitea_data 
+    sudo rm -rf docker-compose/postgres_data
 }
 
 app_turbolink_remove(){
@@ -149,6 +147,7 @@ function destroy_project(){
 function restart(){
     docker-compose down
     prune
+    cache_clear
     source start.sh
 }
 
@@ -162,6 +161,22 @@ function se_existe(){
 
 function Welcome(){
     echo funções carregadas!
+}
+
+function localhost_por_gitea(){
+    # Nome do arquivo a ser editado
+    file=$1
+
+    # Verifica se o arquivo existe
+    if [ ! -f "$file" ]; then
+    echo "Arquivo não encontrado: $file"
+    exit 1
+    fi
+
+    # Faz a substituição
+    sed -i 's/localhost/gitea.test/g' $file
+
+    echo "Substituição concluída com sucesso em $file"
 }
 
 Welcome
