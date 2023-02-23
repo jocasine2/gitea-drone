@@ -44,6 +44,11 @@ services:
     restart: always
     hostname: drone.test
 
+  dokku:
+    container_name: dokku
+    image: dokku/dokku:0.30.1
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 volumes:
   gitea_data:
   postgres_data:
