@@ -24,17 +24,21 @@ adicione as linhas:
 5 - Acesse o GITEA em [http://gitea.test:3000](http://gitea.test:3000).
 
 ## Crie um aplicativo no drone 
+
 http://gitea.test:3000/user/settings/applications/oauth2
 
 Nome do aplicativo: Drone
-Redirecionar URI: http://gitea.test/login
+
+Redirecionar URI: http://localhost/login
 
 guarde o Client ID e o Client Secret 
 faça logof no gitea (Sair)
+
 ## Configure o drone
 em docker-compose.yml
 
 DRONE_GITEA_CLIENT_ID = Client ID da aplicação criada no gitea
+
 DRONE_GITEA_CLIENT_SECRET = Client Secret da aplicação criada no gitea
 
 novamente 
